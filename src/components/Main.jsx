@@ -5,7 +5,6 @@ import Modal from "./Modal";
 function Main() {
   const [modalOpen, setModalOpen] = useState(false);
   var indx = 1;
-  const [editRow, setEditRow] = useState(null);
   const [rows, setRows] = useState([
     {
       id: indx++,
@@ -36,7 +35,6 @@ function Main() {
   };
   const handleEdit = (editedRow) => {
     console.log(editedRow);
-    // setEditRow(editedRow);
     let newName = prompt("Enter the name", rows[editedRow].partyName);
 
     let newPhone = prompt(
@@ -51,26 +49,6 @@ function Main() {
 
       setRows(temprows);
     }
-
-    // rows.map(async (row, idx) => {
-    //   if (idx === editedRow) {
-    //     handleDelete(idx);
-
-    //     setRows([
-    //       ...rows,
-    //       {
-    //         id: idx,
-    //         partyName: newName,
-    //         mobileNumber: newPhone,
-    //         gold: "-25.966 Gm",
-    //         silver: "-14.200 Kg",
-    //         amount: "+₹1,850.00",
-    //       },
-    //     ]);
-    //     console.log(rows);
-    //     console.log(newName, newPhone);
-    //   }
-    // });
   };
 
   return (
@@ -144,7 +122,6 @@ function Main() {
                   modalClose={() => {
                     setModalOpen(false);
                   }}
-                  // defaultValue={editRow!==null&& rows[editRow] }
                 />
               )}
             </div>

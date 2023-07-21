@@ -10,17 +10,14 @@ function Modal({modalClose,addRow}) {
     gstin: "",
     pan: "",
     adhaar: "",
-  });//[{}
+  });
   const [partyGroups, setPartyGroups] = useState("");//[{}
 const [tags, setTags] = useState([]);
 
 const handleChange = event => {
-  // if (event.key === "Enter" && event.target.value !== "") {
   setPartyGroups(event.target.value);
-  // }
 }
 const addTags = event => {
-  // event.preventDefault();
   const trimmedInput = partyGroups.trim();
   if (event.key === "Enter"  && trimmedInput.length && !tags.includes(trimmedInput)) {
     event.preventDefault();
